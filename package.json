@@ -71,6 +71,13 @@
     "install": "node-gyp-build",
     "build": "prebuildify --napi --strip",
     "rebuild": "node-gyp rebuild",
-    "test": "node -e \"require('child_process').spawnSync('node', ['--test', ...require('glob').sync('test/**/*.js')], {stdio:'inherit'})\""
+    "test": "node --test \"test/**/*.js\""
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=22",
+      "onFail": "warn"
+    }
   }
 }
